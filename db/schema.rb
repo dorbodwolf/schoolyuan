@@ -36,20 +36,30 @@ ActiveRecord::Schema.define(version: 20151219141359) do
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
   create_table "users", force: :cascade do |t|
+    t.string   "gender"
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.boolean  "admin",             default: false
+    t.boolean  "admin"
     t.string   "activation_digest"
-    t.boolean  "activated",         default: false
+    t.boolean  "activated"
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "age"
+    t.string   "height"
+    t.string   "hometown"
+    t.string   "constellation"
+    t.boolean  "married_info"
+    t.boolean  "in_love_info"
+    t.text     "expected_lover"
+    t.string   "edu_finished"
+    t.string   "final_edu_school"
+    t.string   "school_now"
+    t.string   "school_now_loc"
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
